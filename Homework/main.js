@@ -3,67 +3,79 @@ let people = [{
     "id": 1,
     "firstName": "Frank",
     "lastName": "Herbert",
+    "fullName": "Frank Herbert",
     "job": "Lead Software Engineer",
     "Skills": ["JavaScript", "C#", "SQL", "HTML", "CSS", "SCRUM Master"],
-    "Salary": 120196
+    "Salary": 120196 // $120,196
 },
 {
     "id": 2,
     "firstName": "Joan",
     "lastName": "Armorett",
+    "fullName": "Joan Armorett",
     "job": "Jr Software Developer",
     "Skills": ["JavaScript", "HTML", "CSS"],
-    "Salary": 70000
+    "Salary": 70000 // $70,000
 },
 {
     "id": 3,
     "firstName": "John",
     "lastName": "Mosses",
+    "fullName": "John Mosses",
     "job": "Software Engineer",
     "Skills": ["JavaScript", "C#", "SQL", "HTML", "CSS"],
-    "Salary": 101234
+    "Salary": 101234 // $101,234
 },
 {
     "id": 4,
     "firstName": "Janet",
     "lastName": "Lee",
+    "fullName": "Janet Lee",
     "job": "Software Engineer",
     "Skills": ["JavaScript", "C#", "HTML", "CSS", "Technical Writer"],
-    "Salary": 86000
+    "Salary": 86000 // $86,000
 },
 {
     "id": 5,
     "firstName": "Garry",
     "lastName": "Funny",
+    "fullName": "Garry Funny",
     "job": "Quality Assurance Engineer",
     "Skills": ["JavaScript", "C#", "QA", "C#"],
-    "Salary": 89100
+    "Salary": 89100 // $89,100
 },
 {
     "id": 6,
     "firstName": "Karen",
     "lastName": "Enoch",
+    "fullName": "Karen Enoch",
     "job": "Jr Software Engineer",
     "Skills": ["JavaScript", "C#", "HTML", "CSS"],
-    "Salary": 70000
+    "Salary": 70000 // $70,000
 },
 {
     "id": 7,
     "firstName": "Jason",
     "lastName": "Keel",
+    "fullName": "Jason Keel",
     "job": "Quality Assurance Engineer",
     "Skills": ["JavaScript", "C#", "SQL"],
-    "Salary": 98000
+    "Salary": 98000 // $98,000
 }
 ];
 
 function exercise1() {
     // Return an array of the full names of people making over $100,000.
-    let answer = people.filter((person) => {
+    let filterAnswer = people.filter((person) => {
         return person.Salary > 100000
     });
-    // This code is missing a map call to return only an array of firstName and lastName
-    document.getElementById("1").innerText = `Answer: ${JSON.stringify(answer)}`;
+
+    let mapAnswer = filterAnswer.map((person) => {
+        return person.fullName;
+    })
+
+    document.getElementById("1").innerText = `Answer: ${JSON.stringify(mapAnswer)}`; 
+
 }
 
 function exercise2() {
