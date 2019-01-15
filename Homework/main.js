@@ -72,16 +72,39 @@ function exercise1() {
 
     let mapAnswer = filterAnswer.map((person) => {
         return person.fullName;
-    })
+    });
 
     document.getElementById("1").innerText = `Answer: ${JSON.stringify(mapAnswer)}`; 
+    
 
+    // // Return an array of the full names of people making over $100,000.
+    // let filterAnswer = people.filter((person) => {
+    //     return person.Salary > 100000
+    // });
+
+    // let mapAnswer1 = filterAnswer.map((person) => {
+    //     return person.firstName;
+    // });
+
+    // let mapAnswer2 = filterAnswer.map((person) => {
+    //     return person.lastName;
+    // });
+
+    // let names = mapAnswer1.concat(mapAnswer2);
+
+    // document.getElementById("1").innerText = `Answer: ${JSON.stringify(names)}`; 
+    
 }
+
 
 function exercise2() {
     // Return a total cost of the team by adding up salaries
-    let answer = ["Not Implemented"];
-    document.getElementById("2").innerText = `Answer: ${JSON.stringify(answer)}`;
+    // let answer = ["Not Implemented"];
+    let allSalaries = people.reduce( (accumulator, person) => {
+        return accumulator + person.Salary;
+    }, 0 );
+
+    document.getElementById("2").innerText = `Answer: ${JSON.stringify(allSalaries)}`;
 }
 
 function exercise3() {
