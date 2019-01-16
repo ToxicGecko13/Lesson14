@@ -66,6 +66,7 @@ let people = [{
 
 function exercise1() {
     // Return an array of the full names of people making over $100,000.
+
     let filterAnswer = people.filter((person) => {
         return person.Salary > 100000
     });
@@ -97,26 +98,56 @@ function exercise1() {
 }
 
 
+
 function exercise2() {
     // Return a total cost of the team by adding up salaries
-    // let answer = ["Not Implemented"];
+
     let allSalaries = people.reduce( (accumulator, person) => {
         return accumulator + person.Salary;
     }, 0 );
 
     document.getElementById("2").innerText = `Answer: ${JSON.stringify(allSalaries)}`;
+
 }
+
+
 
 function exercise3() {
     // Return an array of the full names of people with "SQL" skills
-    let answer = ["Not Implemented"];
     // if you do a filter on person.Skills you can test for a specific skill.
+
+    let filterAnswer = people.filter((person) => {
+        return person.Skills === "SQL";
+    });
+
+    let answer = filterAnswer.map((person) => {
+        return person.fullName;
+    });
+
     document.getElementById("3").innerText = `Answer: ${JSON.stringify(answer)}`;
+
 }
 
+
+
 function exercise4() {
-    // Return an array of people with "Software Engineer" in their job title.  Each object in the array your return should have 2 properties, fullName, and job.
-    let answer = ["Not Implemented"];
+    // Return an array of people with "Software Engineer" in their job title.  Each object in the array you return should have 2 properties, fullName, and job.
     // you can use the method of .includes(substring) on a string to find if a string is found inside a string.
-    document.getElementById("4").innerText = `Answer: ${JSON.stringify(answer)}`;
+
+    let softwareEngineer = people.filter((person) => {
+        return person.job.includes("Software Engineer");
+    });
+
+    let peoplesNames = softwareEngineer.map((person) => {
+        return person.fullName;
+    });
+
+    let peoplesJobs = softwareEngineer.map((person) => {
+        return person.job;
+    });
+
+    let finalAnswer = peoplesNames.concat(peoplesJobs);
+
+    document.getElementById("4").innerText = `Answer: ${JSON.stringify(finalAnswer)}`;
+
 }
